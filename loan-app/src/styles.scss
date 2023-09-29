@@ -1,0 +1,30 @@
+@import './theme';
+
+html, body {
+  height: 100%;
+}
+
+body {
+   margin: 0;
+   font-family: Roboto,"Helvetica Neue", sans-serif;
+}
+
+.yellow {
+  color: #fff01c
+}
+
+.brown {
+  color: #DED1BE;
+}
+
+.mat-icon {
+  font-size: 60px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.black {
+  color: black;
+}
