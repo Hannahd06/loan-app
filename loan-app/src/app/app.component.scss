@@ -1,6 +1,19 @@
+/**
+    Title: app.component.scss
+    Author: Professor Richard Krasso
+    Modified by:Hannah Del Real
+    Date: 09/27/23
+    Description: SCSS styling for main container and navigation bar in the Loan App
+*/
+
 .main-container {
   margin-top: 20px;
   padding-top: 25px;
   width: 80%;
   margin: 20px auto;
+}
+
+.mat-button:hover {
+  background-color: black;
+  color: #DED1BE;
 }

@@ -1,1 +1,78 @@
-<p>home works!</p>
+<!--
+    Title: home.component.html
+    Author: Professor Richard Krasso
+    Modified by: Hannah Del Real
+    Date: 09/27/2023
+    Description:  Home Page  for the Loan App.
+-->
+
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <div fxFlex class="grade-form">
+
+    <!-- Card for left hand card containing input form for course and grade -->
+    <mat-card class="mat-elevation-z8">
+
+      <mat-card-content>
+
+        <form fxLayout="column" fxLayoutGap="16px">
+
+        <!-- Form field for user to provide text input for Loan Amount  -->
+          <mat-form-field fxFlex appearance="outline" >
+
+            <mat-label>Loan Amount:</mat-label>
+
+            <input type="text" name="txtLoanAmount" id="txtLoanAmount" matInput/>
+
+          </mat-form-field>
+
+          <!-- Form field for user to provide text input for Loan Term  -->
+        <mat-form-field fxFlex appearance="outline" >
+
+          <mat-label>Loan Term (in years):</mat-label>
+
+          <input type="text" name="txtLoanTerm" id="txtLoanAmount" matInput />
+
+        </mat-form-field>
+
+        <!-- Form field for user to provide text input for interest rate -->
+        <mat-form-field fxFlex appearance="outline">
+
+          <mat-label>Interest Rate (ex. 4.5):</mat-label>
+
+          <input type="text" name="txtInterestRate" id="txtLoanAmount" matInput />
+
+        </mat-form-field>
+
+          <!-- Button for user to trigger an onlick event to push newly inputted entry object to transcript  -->
+            <button mat-raised-button color="primary"  id="btnCalculate" >Calculate</button>
+
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex class="grade-summary">
+
+    <!-- Bottom card to display calculated monthly payment and interest paid   -->
+    <mat-card class="black">
+
+      <mat-card-title class="yellow" style="text-align: center; font-size: 20px;">
+
+        Your monthly payment: <br />
+        <app-loan-details class="white"></app-loan-details>
+
+        <br /><hr style="width: 60%; text-align: center;" /><br />
+
+        Total interest paid:
+        <br />
+        <app-loan-details class="white"></app-loan-details>
+
+
+      </mat-card-title>
+
+    </mat-card>
+
+  </div>
+</div>
+

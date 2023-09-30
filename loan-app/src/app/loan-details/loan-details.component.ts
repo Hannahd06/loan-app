@@ -3,17 +3,17 @@
 ; Author: Professor Krasso
 ; Date: 09/27/2023
 ; Modified By: Hannah Del Real
-; Description: About Component
+; Description: Loan Details Component
 */
 
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-loan-details',
+  templateUrl: './loan-details.component.html',
+  styleUrls: ['./loan-details.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class LoanDetailsComponent implements OnInit {
 
   constructor() { }
 

@@ -1,3 +1,11 @@
+/**
+    Title: style.scss
+    Author: Professor Richard Krasso
+    Modified by:Hannah Del Real
+    Date: 09/27/23
+    Description: SCSS styling for Loan App
+*/
+
 @import './theme';
 
 html, body {
@@ -26,5 +34,9 @@ body {
 }
 
 .black {
-  color: black;
+  background-color: black;
+}
+
+.white {
+  color: white;
 }
