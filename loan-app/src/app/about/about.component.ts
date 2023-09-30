@@ -1,5 +1,5 @@
 /**
-; Title: loan-details.component.ts
+; Title: about.component.ts
 ; Author: Professor Krasso
 ; Date: 09/27/2023
 ; Modified By: Hannah Del Real
