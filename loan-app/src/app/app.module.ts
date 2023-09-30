@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoanDetailsComponent
+    LoanDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
