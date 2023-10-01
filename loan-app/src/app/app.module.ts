@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { InterestDetailsComponent } from './interest-details/interest-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     ContactComponent,
     LoanDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InterestDetailsComponent
   ],
   imports: [
     BrowserModule,

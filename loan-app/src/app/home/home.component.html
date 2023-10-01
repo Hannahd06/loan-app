@@ -7,21 +7,21 @@
 -->
 
 <div fxLayout="row wrap" fxLayoutGap="20px">
-  <div fxFlex class="grade-form">
+  <div fxFlex>
 
     <!-- Card for left hand card containing input form for course and grade -->
     <mat-card class="mat-elevation-z8">
 
       <mat-card-content>
 
-        <form fxLayout="column" fxLayoutGap="16px">
+        <form [formGroup]="loanForm" fxLayout="column" fxLayoutGap="16px">
 
         <!-- Form field for user to provide text input for Loan Amount  -->
           <mat-form-field fxFlex appearance="outline" >
 
             <mat-label>Loan Amount:</mat-label>
 
-            <input type="text" name="txtLoanAmount" id="txtLoanAmount" matInput/>
+            <input required type="text" name="loanAmount" id="textLoanAmount" formControlName="loanAmount" matInput/>
 
           </mat-form-field>
 
@@ -30,7 +30,7 @@
 
           <mat-label>Loan Term (in years):</mat-label>
 
-          <input type="text" name="txtLoanTerm" id="txtLoanAmount" matInput />
+          <input required type="text" name="numOfYears"  matInput formControlName="numOfYears" />
 
         </mat-form-field>
 
@@ -39,12 +39,12 @@
 
           <mat-label>Interest Rate (ex. 4.5):</mat-label>
 
-          <input type="text" name="txtInterestRate" id="txtLoanAmount" matInput />
+          <input required type="text" name="InterestRate" matInput formControlName="interestRate" />
 
         </mat-form-field>
 
           <!-- Button for user to trigger an onlick event to push newly inputted entry object to transcript  -->
-            <button mat-raised-button color="accent"  id="btnCalculate" >Calculate</button>
+            <button [disabled]="!loanForm.valid" type="submit" mat-raised-button color="accent"  id="btnCalculate" (click)="calculateResults()">Calculate</button>
 
         </form>
 
@@ -52,24 +52,24 @@
     </mat-card>
   </div>
 
-  <div fxFlex class="grade-summary">
+  <div fxFlex class="loan-summary">
 
     <!-- Bottom card to display calculated monthly payment and interest paid   -->
     <mat-card class="black">
 
-      <mat-card-title class="yellow" style="text-align: center; font-size: 20px;">
+      <mat-card-content class="yellow loan-summary" style="text-align: center; font-size: 20px;">
 
-        Your monthly payment: <br />
-        <app-loan-details class="white"></app-loan-details>
+        Your monthly payment: <br /><br /><br />
+        <app-loan-details [monthlyPayment]="monthlyPayment" class="details"></app-loan-details>
 
-        <br /><hr style="width: 60%; text-align: center;" /><br />
+        <br /><br /><hr style="width: 60%; text-align: center;" /><br />
 
         Total interest paid:
-        <br />
-        <app-loan-details class="white"></app-loan-details>
+        <br /><br/><br />
+        <app-interest-details [interestPaid]="interestPaid" class="details"></app-interest-details>
 
 
-      </mat-card-title>
+      </mat-card-content>
 
     </mat-card>
 

@@ -6,7 +6,7 @@
 ; Description: Loan Details Component
 */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-loan-details',
@@ -14,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loan-details.component.scss']
 })
 export class LoanDetailsComponent implements OnInit {
+
+  @Input() monthlyPayment: number;
 
   constructor() { }
 
