@@ -101,7 +101,9 @@
         Total interest paid:
         <br /><br/><br />
         <app-interest-details [interestPaid]="interestPaid" class="details"></app-interest-details>
-
+        <br /><br /><br />
+        <!-- Button for user to trigger an onclick event that clears all entry objects and resets monthlyPayment and interestPaid values back to 0  -->
+        <button style="float: right;" mat-button color="primary" (click)="clearForm()" >Clear Form</button>
 
       </mat-card-content>
 
