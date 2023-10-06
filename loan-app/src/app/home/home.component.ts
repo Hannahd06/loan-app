@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
 
   monthlyPayment: number = 0;
   interestPaid: number = 0;
+  loanAmount: number;
+  numOfYears: number;
+  interestRate: number;
 
 
 
@@ -28,9 +31,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loanForm = this.fb.group({
-      loanAmount: ['', Validators.required],
-      numOfYears: ['', Validators.required],
-      interestRate: ['', Validators.required]
+      loanAmount: ['',[ Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')]],
+      numOfYears: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      interestRate: ['', [ Validators.required, Validators.pattern('^-?[0-9]\\d*(\\.\\d{1,2})?$')]]
     });
   }
 
@@ -39,13 +42,25 @@ export class HomeComponent implements OnInit {
   };
 
 calculateResults() {
-  let loanAmount: number = parseFloat(this.loanForm.value.loanAmount);
-  let numOfYears: number = parseFloat(this.loanForm.value.numOfYears);
-  let interestRate: number = parseFloat(this.loanForm.value.interestRate);
-  let i = ((interestRate / 100) / 12);
-  let numOfMonths = (numOfYears * 12)
+  // Create a variable that hold the loan amount entered by user.
+  let loanAmount = parseFloat(this.loanForm.value.loanAmount);
 
+  // Create a variable that holds the loan term in years entered by the user.
+  let numOfYears = parseFloat(this.loanForm.value.numOfYears);
+
+  // Create a variable that holds the interest rate entered by the user.
+  let interestRate = parseFloat(this.loanForm.value.interestRate);
+
+  // create a variable with the value of the interest rate per month as a decimal.
+  let i = ((interestRate / 100) / 12);
+
+  // Create a variable the loan term in months.
+  let numOfMonths = (numOfYears * 12);
+
+  // Calculate the monthly payment based on values entered by the user.
   this.monthlyPayment = (((loanAmount * i * Math.pow((1 + i), numOfMonths)))/((Math.pow((1 + i), numOfMonths)) - 1));
+
+  // Calculate the total interest paid that will have to be paid based on values entered by the user user.
   this.interestPaid = ((this.monthlyPayment * numOfMonths) - loanAmount);
 }
 

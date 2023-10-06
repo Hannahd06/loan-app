@@ -14,7 +14,19 @@
 
       <mat-card-content>
 
+
         <form [formGroup]="loanForm" fxLayout="column" fxLayoutGap="16px">
+
+        <!-- Display error message if user enters anything other than whole numbers or decimals or touches the input box-->
+        <div *ngIf="form.loanAmount.errors && form.loanAmount.touched">
+
+          <div class="msg-error">
+            <mat-icon style="padding-right: 10px; justify-content:center; font-size: 30px;" color="warn">error</mat-icon>
+
+            <span class="error-text-align">Loan Amount should only contain whole numbers and/or decimals. Do not include commas or symbols!</span>
+           </div>
+
+        </div>
 
         <!-- Form field for user to provide text input for Loan Amount  -->
           <mat-form-field fxFlex appearance="outline" >
@@ -25,7 +37,18 @@
 
           </mat-form-field>
 
-          <!-- Form field for user to provide text input for Loan Term  -->
+        <!-- Display error message if user enters anything other than whole numbers or touches the input box-->
+        <div *ngIf="form.numOfYears.errors && form.numOfYears.touched">
+
+          <div class="msg-error">
+            <mat-icon style="padding-right: 10px; justify-content:center; font-size: 30px;" color="warn">error</mat-icon>
+
+            <span class="error-text-align">Loan term should only contain whole numbers.</span>
+
+          </div>
+        </div>
+
+        <!-- Form field for user to provide text input for Loan Term  -->
         <mat-form-field fxFlex appearance="outline" >
 
           <mat-label>Loan Term (in years):</mat-label>
@@ -33,6 +56,17 @@
           <input required type="text" name="numOfYears"  matInput formControlName="numOfYears" />
 
         </mat-form-field>
+
+        <!-- Display error message if user enters anything other than whole numbers or decimals or touches the input box-->
+        <div *ngIf="form.interestRate.errors && form.interestRate.touched">
+
+          <div class="msg-error">
+            <mat-icon style="padding-right: 10px; justify-content:center; font-size: 30px;" color="warn">error</mat-icon>
+
+            <span class="error-text-align">Interest rate should only contain whole numbers and/or decimals.</span>
+
+          </div>
+        </div>
 
         <!-- Form field for user to provide text input for interest rate -->
         <mat-form-field fxFlex appearance="outline">
