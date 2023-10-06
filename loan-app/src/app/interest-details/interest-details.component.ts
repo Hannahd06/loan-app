@@ -1,3 +1,12 @@
+/**
+; Title: home.component.ts
+; Author: Professor Krasso
+; Date: 10/01/2023
+; Modified By: Hannah Del Real
+; Description: interest-details Component
+*/
+
+
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
